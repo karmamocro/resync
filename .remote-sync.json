@@ -1,0 +1,12 @@
+{
+  "transport": "ftp",
+  "hostname": "149.210.233.110",
+  "port": 21,
+  "username": "karmamocro",
+  "password": "Elhajoui1",
+  "target": "/home/vagrant/dirname/subdirname",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ]
+}
