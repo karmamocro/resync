@@ -1,3 +1,24 @@
+<?php
+if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+  $ip=$_SERVER['HTTP_CLIENT_IP'];
+}
+elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+  $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+}
+else{
+  $ip=$_SERVER['REMOTE_ADDR'];
+}
+
+if ($ip != "80.69.67.10") {
+  $file = fopen("ip.txt","a");
+
+  $text = "Adres : ".$ip .PHP_EOL;
+  fwrite($file,$text);
+  fclose($file);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +27,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Re-Sync - Landing Page Template</title>
+        <title>Re-Sync - IT Service Provider</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">

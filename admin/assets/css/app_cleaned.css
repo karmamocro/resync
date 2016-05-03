@@ -1,0 +1,630 @@
+/*
+ * Template Name: Unify - Responsive Bootstrap Template
+ * Description: Business, Corporate, Portfolio, E-commerce, Blog and One Page Template.
+ * Version: 1.9.2
+ * Author: @htmlstream
+ * Website: http://htmlstream.com
+*/
+
+/*Thematic Break
+------------------------------------*/
+hr {
+	margin: 30px 0;
+}
+
+undefined
+undefined
+undefined
+/*Headings
+------------------------------------*/
+h1 {
+	font-size: 28px;
+	line-height: 35px;
+}
+h2 {
+	font-size: 24px;
+	line-height: 33px;
+}
+h3 {
+	font-size: 20px;
+	line-height: 27px;
+}
+h4 {
+	line-height: 25px;
+}
+h5 {
+	line-height: 20px;
+}
+h6 {
+	line-height: 18px;
+}
+
+undefined
+h1, h2, h3, h4, h5, h6 {
+	color: #555;
+	margin-top: 5px;
+	text-shadow: none;
+	font-weight: normal;
+	font-family: "Open Sans", Arial, sans-serif;
+}
+
+undefined
+/*Block Headline*/
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Heading Options*/
+undefined
+undefined
+undefined
+undefined
+undefined
+@media (max-width: 768px) {
+undefined}
+
+/*Headline v1*/
+undefined
+/*Headline v2*/
+undefined
+/*Headline v3*/
+undefined
+/*Headline v4*/
+undefined
+/*Headline v5*/
+undefined
+/*Headline v6*/
+undefined
+/*Heading Titles v1*/
+undefined
+undefined
+undefined
+undefined
+/*Heading Titles v2*/
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Heading Title v3*/
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Title v4*/
+undefined
+/*Headline Center*/
+undefined
+undefined
+undefined
+undefined
+@media (max-width: 991px) {
+undefined}
+
+undefined
+undefined
+/*Headline Center v2*/
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Headline Left*/
+undefined
+undefined
+undefined
+/*Headline v2
+------------------------------------*/
+undefined
+undefined
+/*Heading Sizes
+------------------------------------*/
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Devider
+------------------------------------*/
+undefined
+undefined
+/*Tables
+------------------------------------*/
+/*Basic Tables*/
+undefined
+@media (max-width: 768px) {
+undefined}
+
+/*Forms
+------------------------------------*/
+.form-control {
+	box-shadow: none;
+	border-radius: 0;
+}
+
+.input-group-addon {
+	border-radius: 0;
+}
+
+.form-control:focus {
+	border-color: #bbb;
+	box-shadow: 0 0 2px #c9c9c9;
+}
+
+/*Form Spacing*/
+undefined
+/*Form Icons*/
+.input-group-addon {
+	color: #b3b3b3;
+	font-size: 14px;
+	background: #fff;
+}
+
+/*Navigation
+------------------------------------*/
+undefined
+/*Button Styles
+------------------------------------*/
+undefined.btn-u {
+	border: 0;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+	font-weight: 400;
+	padding: 6px 13px;
+	position: relative;
+	background: #72c02c;
+	white-space: nowrap;
+	display: inline-block;
+	text-decoration: none;
+}
+.btn-u:hover {
+	color: #fff;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn-u.btn-block {
+	text-align: center;
+}
+
+undefined
+undefined
+undefined
+undefined
+/*Button Groups*/
+undefined
+undefined
+undefined
+/*For FF Only*/
+@-moz-document url-prefix() {
+	.footer-subsribe .btn-u {
+		padding-bottom: 4px;
+	}
+}
+@media (max-width: 768px) {
+	@-moz-document url-prefix() {
+		.btn-u {
+			padding-bottom: 6px;
+		}
+	}
+}
+
+/*Buttons Color*/
+.btn-u:hover,
+.btn-u:focus,
+.btn-u:active,
+undefined,
+undefined {
+	background: #5fb611;
+}
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Bordered Buttons*/
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Dropdown Buttons
+------------------------------------*/
+undefined
+/*Badges and Labels
+------------------------------------*/
+undefined
+/*Labels*/
+undefined
+/*Badges*/
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Badge Lists*/
+undefined
+undefined
+/*Badge Icons*/
+undefined
+undefined
+/*Badge Box v1*/
+undefined
+/*Badge Box v2*/
+undefined
+undefined
+/*General Badge Box*/
+undefined
+undefined
+/*Icons
+------------------------------------*/
+/*Social Icons*/
+.social-icons {
+	margin: 0;
+	padding: 0;
+}
+
+.social-icons li {
+	list-style: none;
+	margin-right: 3px;
+	margin-bottom: 5px;
+	text-indent: -9999px;
+	display: inline-block;
+}
+
+undefined.social-icons li a {
+	width: 28px;
+	height: 28px;
+	display: block;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	transition: all 0.3s ease-in-out;
+}
+
+.social-icons li:hover a {
+	 background-position: 0 -38px;
+}
+
+undefined
+undefined
+undefined.social_facebook {background: url(../img/icons/social/facebook.png) no-repeat;}
+undefined.social_googleplus {background: url(../img/icons/social/googleplus.png) no-repeat;}
+undefined.social_linkedin {background: url(../img/icons/social/linkedin.png) no-repeat;}
+undefined.social_twitter {background: url(../img/icons/social/twitter.png) no-repeat;}
+undefined
+/*Font Awesome Icon Styles*/
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Line Icons*/
+undefined
+undefined
+/*Icon Styles For Links*/
+undefined
+undefined
+undefined
+undefined
+/*Icons Color*/
+undefined
+undefined
+/*Icons Backgroun Color*/
+undefined
+undefined
+/* Make Font Awesome icons fixed width */
+undefined
+/*Typography
+------------------------------------*/
+undefined
+undefined
+/*Text Dropcap*/
+undefined
+undefined
+/*Text Highlights*/
+undefined
+undefined
+/*Text Borders*/
+undefined
+undefined
+/*List Styles*/
+undefined
+/*Contextual Backgrounds*/
+undefined
+/*Blockquote*/
+blockquote {
+	padding: 5px 15px;
+	border-left-width: 2px;
+}
+
+undefined
+undefined
+/*Blockquote Styles*/
+undefined
+undefined
+undefined
+undefined
+blockquote:hover,
+undefined {
+	border-color: #72c02c;
+	transition: all 0.4s ease-in-out;
+}
+
+undefined
+undefined
+/*Blockquote Hero Styles*/
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Lists
+------------------------------------*/
+undefined
+/*Lists v1*/
+undefined
+undefined
+/*Lists v2*/
+undefined
+undefined
+/*Alerts
+------------------------------------*/
+undefined
+/*Thumbnails
+------------------------------------*/
+undefined
+/*Panels (Portlets)
+------------------------------------*/
+undefined
+undefined
+/*Panel Table*/
+undefined
+/*Panel Unify*/
+undefined
+undefined
+/*Panel Blue*/
+undefined
+undefined
+/*Panel Red*/
+undefined
+undefined
+/*Panel Green*/
+undefined
+undefined
+/*Panel Sea*/
+undefined
+undefined
+/*Panel Orange*/
+undefined
+undefined
+/*Panel Yellow*/
+undefined
+undefined
+/*Panel Grey*/
+undefined
+undefined
+/*Panel Dark*/
+undefined
+undefined
+/*Panel Purple*/
+undefined
+undefined
+/*Panel Aqua*/
+undefined
+undefined
+/*Panel Brown*/
+undefined
+undefined
+/*Panel Dark Blue*/
+undefined
+undefined
+/*Panel Light Green*/
+undefined
+undefined
+/*Panel Default Dark*/
+undefined
+undefined
+/*Progress Bar
+------------------------------------*/
+undefined
+undefined
+undefined
+/*progress-bar (sizes)*/
+undefined
+undefined
+undefined
+undefined
+/*progress-bar (colors)*/
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Progress Bar Animation
+------------------------------------*/
+undefined
+undefined
+undefined
+/*Vertical Progress Bar*/
+undefined
+undefined
+undefined
+undefined
+/*Count Stars
+------------------------------------*/
+undefined
+undefined
+undefined
+undefined
+undefined
+/*Media (Audio/Videos and Images)
+------------------------------------*/
+/*Images*/
+undefined
+undefined
+undefined
+undefined
+/*Responsive Video*/
+undefined
+undefined
+/*Column Sizes
+------------------------------------*/
+/*Remove the Gutter Padding from Columns*/
+undefined
+undefined
+/*Heights
+------------------------------------*/
+undefined
+/*Spaces
+------------------------------------*/
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined.margin-bottom-20,
+undefined,
+undefined,
+undefined,
+undefined,
+undefined,
+undefined,
+undefined,
+undefined,
+undefined {
+	 clear:both;
+}
+undefined.margin-bottom-20 { margin-bottom:20px;}
+undefined
+@media (max-width: 768px) {
+undefined}
+
+@media (max-width: 992px) {
+undefined}
+
+/*Other Spaces*/
+undefined
+undefined
+/*Text Colors
+------------------------------------*/
+undefined/*.color-dark1 { color: #444;}*/
+undefined.color-green { color: #72c02c;}
+undefined
+/*Background Colors
+------------------------------------*/
+undefined
+undefined
+/*Grey Backroud*/
+undefined
+/*Rounded and Circle Classes
+------------------------------------*/
+undefined.rounded-x { border-radius: 50% !important;}
+undefined
+/*Others
+------------------------------------*/
+undefined
+undefined
+/*Display*/
+undefined
+/*Font Size*/
+undefined
+/*Full Width*/
+undefined
+/*Equal Height Columns*/
+@media (max-width: 767px) {
+undefined}
+
+/*Image Classes*/
+undefined
+undefined
+/*Background Light*/
+undefined
+/*CSS3 Hover Effects*/
+undefined
+undefined
+/*Scroll Icon*/
+undefined@-webkit-keyframes scroll {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(36px);
+		-webkit-transform: translateY(36px);
+	}
+}
+@keyframes scroll {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(36px);
+		-webkit-transform: translateY(36px);
+	}
+}
