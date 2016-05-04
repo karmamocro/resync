@@ -8,20 +8,23 @@ ini_set('display_errors', 1); // 0 = uit, 1 = aan
 			if (isset($_POST['username']) && trim($_POST['username']) != '' &&
 					isset($_POST['password']) && trim($_POST['password']) != '')
 			{
+				// echo "<pre>";	var_dump($_POST); echo "</pre>";
+				//  echo  hash('sha256', $_POST['password']);
 					try
 					{
 							//initialisatie
-							$maxAttempts = 3; //pogingen binnen aantal minuten (zie volgende)
+							$maxAttempts = 50; //pogingen binnen aantal minuten (zie volgende)
 							$attemptsTime = 5; //tijd waarin pogingen gedaan mogen worden (in minuten, wil je dat in seconden e.d. met je de query aanpassen)
 
 							//vul hier je eigen databasegegevens in, verbinding maken met database
-							$db = new PDO('mysql:host=localhost;dbname=resync', 'karma', 'karma');
+							$db = new PDO('mysql:host=cheatwith.me;dbname=resync', 'karma', 'karma');
 							$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 							//ophalen gebruikersinformatie, testen of wachtwoord en gebruikersnaam overeenkomen
 							$checkUsers =
 									"SELECT
 											id_user
+
 									FROM
 											user
 									WHERE
@@ -35,6 +38,8 @@ ini_set('display_errors', 1); // 0 = uit, 1 = aan
 																	));
 							$user = $userStmt->fetchAll();
 
+							// echo "string";
+							// var_dump($user);
 							//ophalen inlogpogingen, alleen laatste vijf minuten
 							$checkTries =
 									"SELECT
@@ -59,9 +64,9 @@ ini_set('display_errors', 1); // 0 = uit, 1 = aan
 
 							if (count($user) == 1 && count($tries) == 0)
 							{
-									$_SESSION['user'] = array('user_id' => $user[0]['user_id'], 'IP' => $_SERVER['REMOTE_ADDR']);
+									$_SESSION['user'] = array('id_user' => $user[0]['id_user'], 'IP' => $_SERVER['REMOTE_ADDR']);
 									//pagina waar naartoe nadat er succesvol is ingelogd
-									header('Location: index.php');
+									header('Location: logged.php');
 									die;
 							}
 							else
@@ -151,6 +156,12 @@ ini_set('display_errors', 1); // 0 = uit, 1 = aan
 		<div class="reg-block">
 			<div class="reg-block-header">
 				<h2>Sign In</h2>
+				<?php
+            if (isset($message))
+            {
+                echo $message;
+            }
+        ?>
 				<!-- <ul class="social-icons text-center">
 					<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
 					<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
@@ -163,7 +174,7 @@ ini_set('display_errors', 1); // 0 = uit, 1 = aan
 				</p>
 			</div>
 
-			<form class="" action="handler.php" method="POST">
+			<form class="" action="index.php" method="POST">
 				<div class="input-group margin-bottom-20">
 					<span class="input-group-addon"><i class="fa fa-user"></i></span>
 					<input type="text" class="form-control" name="username" placeholder="Username">
