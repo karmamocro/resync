@@ -64,14 +64,14 @@ function logOut(){
   // Finally, destroy the session.
   session_destroy();
 
-  header('Location: index.php');
+  header('Location: login.php');
   die();
 }
 
 
 function protectPage(){
   if (loggedIn() === false) {
-    header('Location: index.php');
+    header('Location: login.php');
     exit();
   }
 }
@@ -151,7 +151,7 @@ function logIn($username, $password){
                                         'password' => $user[0]['password'],
                                         'naam' => $user[0]['naam']);
               //pagina waar naartoe nadat er succesvol is ingelogd
-              header('Location: logged.php');
+              header('Location: index.php');
               die;
           }
           else

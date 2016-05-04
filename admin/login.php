@@ -11,139 +11,140 @@ ini_set('display_errors', 1); // 0 = uit, 1 = aan
 
  ?>
 
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-	<title>Login ~ Panel | Re-Sync </title>
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Re-Sync Admin Login</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
+		<!-- WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
 
-	<!-- Web Fonts -->
-	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+		<!-- CORE CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-	<!-- CSS Global Compulsory -->
-	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+		<!-- THEME CSS -->
+		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
-	<!-- CSS Implementing Plugins -->
-	<link rel="stylesheet" href="assets/plugins/animate.css">
-	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
-	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-
-	<!-- CSS Page Style -->
-	<link rel="stylesheet" href="assets/css/pages/page_log_reg_v2.css">
-
-	<!-- CSS Theme -->
-	<link rel="stylesheet" href="assets/css/theme-colors/blue.css" id="style_color">
-	<link rel="stylesheet" href="assets/css/theme-skins/dark.css">
-
-	<!-- CSS Customization -->
-	<link rel="stylesheet" href="assets/css/custom.css">
-</head>
-
-<body>
-	<!--=== Content Part ===-->
-	<div class="container">
-		<!--Reg Block-->
-		<div class="reg-block">
-			<div class="reg-block-header">
-				<h2>Sign In</h2>
-				<p>
+	</head>
+	<!--
+		.boxed = boxed version
+	-->
+	<body>
 
 
-				<?php
-						if ($_SERVER['REQUEST_METHOD'] == 'POST')
-            {
-							echo logIn($_POST['username'], $_POST['password']);
+		<div class="padding-15">
 
-            }
-        ?></p>
-				<!-- <ul class="social-icons text-center">
-					<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
-					<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
-					<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
-					<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
-				</ul>
-				<p>Don't Have Account? Click <a class="color-green" href="page_registration1.html">Sign Up</a> to registration.</p> -->
-				<p>
-					Only sign in if you have the rights to it!
-				</p>
+			<div class="login-box">
+
+				<!-- login form -->
+				<form action="login.php" method="POST" class="sky-form boxed">
+					<header><i class="fa fa-users"></i> Sign In</header>
+
+					<!--
+					<div class="alert alert-danger noborder text-center weight-400 nomargin noradius">
+						Invalid Email or Password!
+					</div>
+
+					<div class="alert alert-warning noborder text-center weight-400 nomargin noradius">
+						Account Inactive!
+					</div>
+
+					<div class="alert alert-default noborder text-center weight-400 nomargin noradius">
+						<strong>Too many failures!</strong> <br />
+						Please wait: <span class="inlineCountdown" data-seconds="180"></span>
+					</div>
+					-->
+					<?php
+							if ($_SERVER['REQUEST_METHOD'] == 'POST')
+	            {
+								switch (logIn($_POST['username'], $_POST['password'])) {
+									case 'You have too many times tried the wronge username/password. Please wait a few minutes to login':
+										echo '<div class="alert alert-default noborder text-center weight-400 nomargin noradius">
+														<strong>Too many failures!</strong> <br />
+														Please wait: <span class="inlineCountdown" data-seconds="180"></span>
+													</div>';
+										break;
+
+									case 'invalid username/password. Please try again':
+										echo '<div class="alert alert-danger noborder text-center weight-400 nomargin noradius">
+														Invalid username or Password. Please try again!
+													</div>';
+										break;
+
+									case 'please fill in all required information':
+										echo '<div class="alert alert-warning noborder text-center weight-400 nomargin noradius">
+														please fill in all required information.
+													</div>';
+										break;
+
+									default:
+										# code...
+										break;
+								}
+
+	            }
+	        ?>
+					<fieldset>
+
+						<section>
+							<label class="label">Username</label>
+							<label class="input">
+								<i class="icon-append fa fa-envelope"></i>
+								<input type="text" name="username" placeholder="Username">
+								<span class="tooltip tooltip-top-right">Type your Username</span>
+							</label>
+						</section>
+
+						<section>
+							<label class="label">Password</label>
+							<label class="input">
+								<i class="icon-append fa fa-lock"></i>
+								<input type="password" name="password" placeholder="Password">
+								<b class="tooltip tooltip-top-right">Type your Password</b>
+							</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox-inline" checked><i></i>Keep me logged in</label>
+						</section>
+
+					</fieldset>
+
+					<footer>
+						<input type="submit" class="btn btn-primary pull-right" value="Sign In">
+						<div class="forgot-password pull-left">
+							<a href="page-password.html">Forgot password?</a> <br />
+							<a href="page-register.html"><b>Need to Register?</b></a>
+						</div>
+					</footer>
+				</form>
+				<!-- /login form -->
+
+				<hr />
+
+				<div class="text-center">
+					Or sign in using:
+				</div>
+
+				<!-- more buttons: ui-buttons.html -->
+				<!-- <div class="socials margin-top-10 text-center">
+					<a href="#" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+					<a href="#" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+				</div> -->
+
 			</div>
 
-			<form class="" action="index.php" method="POST">
-				<div class="input-group margin-bottom-20">
-					<span class="input-group-addon"><i class="fa fa-user"></i></span>
-					<input type="text" class="form-control" name="username" placeholder="Username">
-				</div>
-				<div class="input-group margin-bottom-20">
-					<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-					<input type="password" class="form-control" name="password" placeholder="Password">
-				</div>
-				<hr>
-
-				<div class="checkbox">
-					<label>
-						<input type="checkbox">
-						<p>Always stay signed in</p>
-					</label>
-				</div>
-
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<button type="submit" class="btn-u btn-block">Log In</button>
-					</div>
-				</div>
-			</form>
-
 		</div>
-		<!--End Reg Block-->
-	</div><!--/container-->
-	<!--=== End Content Part ===-->
 
-	<!-- JS Global Compulsory -->
-	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-	<!-- JS Implementing Plugins -->
-	<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
-	<script type="text/javascript" src="assets/plugins/backstretch/jquery.backstretch.min.js"></script>
-	<!-- JS Customization -->
-	<script type="text/javascript" src="assets/js/custom.js"></script>
-	<!-- JS Page Level -->
-	<script type="text/javascript" src="assets/js/app.js"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function() {
-			App.init();
-		});
-	</script>
-	<script type="text/javascript">
-		$.backstretch([
-			"assets/img/bg/19.jpg",
-			"assets/img/bg/18.jpg",
-			"assets/img/bg/17.jpg",
-			"assets/img/bg/14.jpg",
-			"assets/img/bg/11.jpg",
-			"assets/img/bg/3.jpg",
-			"assets/img/bg/16.jpg",
-			], {
-				fade: 1000,
-				duration: 7000
-			});
-	</script>
-<!--[if lt IE 9]>
-	<script src="assets/plugins/respond.js"></script>
-	<script src="assets/plugins/html5shiv.js"></script>
-	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
-	<![endif]-->
-
-</body>
+		<!-- JAVASCRIPT FILES -->
+		<script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
+		<script type="text/javascript" src="assets/plugins/jquery/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</body>
 </html>
